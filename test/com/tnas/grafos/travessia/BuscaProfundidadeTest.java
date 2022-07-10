@@ -1,12 +1,13 @@
 package com.tnas.grafos.travessia;
 
 import com.tnas.grafos.representacoes.ListaAdjacencia;
+import com.tnas.grafos.representacoes.Vertice;
 
 public class BuscaProfundidadeTest {
 
 	public static void main(String[] args) {
-		var buscaProfundidade = new BuscaProfundidadeTest();
-		buscaProfundidade.executarTeste1();
+		var testeBuscaProfundidade = new BuscaProfundidadeTest();
+		testeBuscaProfundidade.executarTeste1();
 	}
 	
 	public void executarTeste1() {
@@ -18,8 +19,8 @@ public class BuscaProfundidadeTest {
 				{ 8, 7 }, { 9, 10 }, { 9, 11 }, { 9, 12 }, { 11, 12 }
 		};
 		
-		var listaAdjacencia = new ListaAdjacencia(numVertices, arestas);
-		listaAdjacencia.imprimir();
+		var buscaProfundidade = new BuscaProfundidade();
+		buscaProfundidade.executarBusca(new ListaAdjacencia(numVertices, arestas), new Vertice(0));
 	}
 
 }

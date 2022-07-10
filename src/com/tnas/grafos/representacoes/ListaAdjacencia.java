@@ -1,7 +1,9 @@
 package com.tnas.grafos.representacoes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -29,7 +31,12 @@ public class ListaAdjacencia {
 	}
 	
 	public List<Vertice> obterAdjacentes(Vertice vertice) {
-		return this.adjacencias.get(vertice.getNome());
+		var adjacentes = this.adjacencias.get(vertice.getNome());
+		return Objects.nonNull(adjacentes) ? adjacentes : Collections.emptyList();
+	}
+	
+	public Vertice obterVertice(Integer nomeVertice) {
+		return this.vertices.get(nomeVertice);
 	}
 	
 	public List<Vertice> obterVertices() {
