@@ -6,6 +6,10 @@ public class Vertice {
 	
 	private StatusVisitaVertice status;
 	
+	private Integer distancia;
+	
+	private Vertice pai;
+	
 	public Vertice(Integer nome) {
 		this.nome = nome;
 	}
@@ -30,4 +34,21 @@ public class Vertice {
 	public void setStatus(StatusVisitaVertice status) {
 		this.status = status;
 	}
+
+	public Integer getDistancia() {
+		return distancia;
+	}
+
+	public void setDistancia(Integer distancia) {
+		this.distancia = distancia;
+	}
+
+	public Vertice getPai() {
+		return pai;
+	}
+
+	public void setPai(Vertice pai) {
+		this.pai = pai;
+	}
+	
 }
