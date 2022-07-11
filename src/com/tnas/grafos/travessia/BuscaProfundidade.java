@@ -1,5 +1,6 @@
 package com.tnas.grafos.travessia;
 
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -54,20 +55,23 @@ public class BuscaProfundidade {
 					vertice = vertice.getPai();
 				}
 				
-				break;
+				pilha.clear();
 			}
-			
-			if (vertice.getStatus() == StatusVisitaVertice.NOVO) {
+			else {
 				
-				vertice.setStatus(StatusVisitaVertice.VISITADO);
-				
-				for (var v : listaAdjacencia.obterAdjacentes(vertice)) {
-					if (v.getStatus() == StatusVisitaVertice.NOVO) {
-						pilha.push(v);
-						v.setPai(vertice);
+				if (vertice.getStatus() == StatusVisitaVertice.NOVO) {
+					
+					vertice.setStatus(StatusVisitaVertice.VISITADO);
+					
+					for (var v : listaAdjacencia.obterAdjacentes(vertice)) {
+						if (v.getStatus() == StatusVisitaVertice.NOVO) {
+							pilha.push(v);
+							v.setPai(vertice);
+						}
 					}
 				}
 			}
+			
 		}
 	}
 }
