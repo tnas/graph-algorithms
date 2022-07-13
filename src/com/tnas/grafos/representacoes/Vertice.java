@@ -2,7 +2,15 @@ package com.tnas.grafos.representacoes;
 
 public class Vertice {
 
-	private Integer nome;
+	private static Integer INDICE = 0;
+	
+	public enum StatusVisitaVertice {
+		NOVO, VISITADO;
+	}
+	
+	private Integer numero;
+	
+	private String rotulo;
 	
 	private StatusVisitaVertice status;
 	
@@ -10,21 +18,30 @@ public class Vertice {
 	
 	private Vertice pai;
 	
-	public Vertice(Integer nome) {
-		this.nome = nome;
+	private Integer tempoDescoberta;
+	
+	private Integer tempoFinalizacao;
+	
+	public Vertice(String rotulo) {
+		this.rotulo = rotulo;
+		this.numero = INDICE++;
+	}
+
+	public Vertice(Integer numero) {
+		this.numero = numero;
 	}
 	
-	public Vertice(Integer nome, StatusVisitaVertice status) {
-		this.nome = nome;
+	public Vertice(Integer numero, StatusVisitaVertice status) {
+		this.numero = numero;
 		this.status = status;
 	}
 
-	public Integer getNome() {
-		return nome;
+	public Integer getNumero() {
+		return numero;
 	}
 
-	public void setNome(Integer nome) {
-		this.nome = nome;
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 
 	public StatusVisitaVertice getStatus() {
@@ -49,6 +66,30 @@ public class Vertice {
 
 	public void setPai(Vertice pai) {
 		this.pai = pai;
+	}
+
+	public Integer getTempoDescoberta() {
+		return tempoDescoberta;
+	}
+
+	public void setTempoDescoberta(Integer tempoDescoberta) {
+		this.tempoDescoberta = tempoDescoberta;
+	}
+
+	public Integer getTempoFinalizacao() {
+		return tempoFinalizacao;
+	}
+
+	public void setTempoFinalizacao(Integer tempoFinalizacao) {
+		this.tempoFinalizacao = tempoFinalizacao;
+	}
+
+	public String getRotulo() {
+		return rotulo;
+	}
+
+	public void setRotulo(String rotulo) {
+		this.rotulo = rotulo;
 	}
 	
 }
