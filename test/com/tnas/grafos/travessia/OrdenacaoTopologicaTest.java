@@ -17,19 +17,25 @@ public class OrdenacaoTopologicaTest {
 		System.out.println();
 	}
 	
+	/**
+	 * Exemplo extraído de Sedgewick e Wayne (2011, p. 583)
+	 */
 	public void executarTeste1() {
 		
 		var numVertices = 13;
 		Integer[][] arestas = { 
-				{ 0, 6 }, { 0, 5 }, { 0, 1 }, { 2, 0 }, { 2, 3 }, 
+				{ 0, 5 }, { 0, 1 }, { 0, 6 }, { 2, 0 }, { 2, 3 }, 
 				{ 3, 5 }, { 5, 4 }, { 6, 4 }, { 6, 9 }, { 7, 6 }, 
-				{ 8, 7 }, { 9, 10 }, { 9, 11 }, { 9, 12 }, { 11, 12 }
+				{ 8, 7 }, { 9, 11 }, { 9, 12 }, { 9, 10 }, { 11, 12 }
 		};
 		
 		var ordenacaoTopologica = new OrdenacaoTopologica();
 		ordenacaoTopologica.ordenar(new ListaAdjacencia(numVertices, arestas));
 	}
 	
+	/**
+	 * Exemplo extraído de Cormen et al. (2009 p. 613)
+	 */
 	public void executarTeste2() {
 		
 		String[] rotulos = { "shirt", "watch", "undershorts", "pants", "tie", "belt", "jacket", "socks", "shoes" };
