@@ -1,6 +1,5 @@
 package com.tnas.grafos.travessia;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -15,7 +14,6 @@ public class OrdenacaoTopologica {
 		var buscaProfundidade = new BuscaProfundidade();
 		buscaProfundidade.executarBuscaRecursiva(listaAdjacencia);
 		var ordemTopologica = buscaProfundidade.getOrdemTopologica(); 
-		Collections.reverse(ordemTopologica);
 		this.imprimir(ordemTopologica);
 	}
 	

@@ -101,7 +101,7 @@ public class BuscaProfundidade {
 		}
 		
 		vertice.setTempoFinalizacao(++this.tempo);
-		this.ordemTopologica.add(vertice);
+		this.ordemTopologica.push(vertice);
 	}
 
 	public LinkedList<Vertice> getOrdemTopologica() {

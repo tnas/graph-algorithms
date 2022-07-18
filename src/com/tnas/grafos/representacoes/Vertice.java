@@ -22,6 +22,8 @@ public class Vertice {
 	
 	private Integer tempoFinalizacao;
 	
+	private Integer cor;
+	
 	public Vertice(String rotulo) {
 		this.rotulo = rotulo;
 		this.numero = INDICE++;
@@ -90,6 +92,14 @@ public class Vertice {
 
 	public void setRotulo(String rotulo) {
 		this.rotulo = rotulo;
+	}
+
+	public Integer getCor() {
+		return cor;
+	}
+
+	public void setCor(Integer cor) {
+		this.cor = cor;
 	}
 	
 }

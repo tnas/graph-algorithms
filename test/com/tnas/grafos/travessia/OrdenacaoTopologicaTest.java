@@ -15,6 +15,10 @@ public class OrdenacaoTopologicaTest {
 		System.out.println("*** Teste 2 ***");
 		ordenacaoTest.executarTeste2();
 		System.out.println();
+		
+		System.out.println("*** Teste 3 ***");
+		ordenacaoTest.executarTeste3();
+		System.out.println();
 	}
 	
 	/**
@@ -47,6 +51,22 @@ public class OrdenacaoTopologicaTest {
 		
 		var ordenacaoTopologica = new OrdenacaoTopologica();
 		ordenacaoTopologica.ordenar(new ListaAdjacencia(rotulos, arestas));
+	}
+	
+	/**
+	 * Solução: 0, 6, 1, 4, 3, 2, 7, 5, 8, 9
+	 */
+	public void executarTeste3() {
+		
+		var numVertices = 10;
+		Integer[][] arestas = { 
+				{ 0, 6 }, { 0, 1 }, { 0, 4 }, { 1, 2 }, { 3, 8 }, 
+				{ 4, 5 }, { 2, 7 }, { 5, 9 }, { 8, 9 }, { 7, 8 },
+				{ 2, 5 }, { 6, 3 }
+		};
+		
+		var ordenacaoTopologica = new OrdenacaoTopologica();
+		ordenacaoTopologica.ordenar(new ListaAdjacencia(numVertices, arestas));
 	}
 
 }
